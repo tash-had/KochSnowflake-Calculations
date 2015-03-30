@@ -22,12 +22,11 @@ public class trianlePerimeter{
 			System.out.println("");
 			System.out.println("Perimeters for Koch's Triangle Fractal with initial perimeter of " + lastPerimeter); 
 
-
 			while(currentTerm<terms){
 				double answer = (float)4/3*lastPerimeter;
-				DecimalFormat df = new DecimalFormat("#.##");
-				Double finalans = Double.parseDouble(df.format(answer))*1; 
-				System.out.println("Iteration " + currentTerm + " = " + finalans);  
+			//	DecimalFormat df = new DecimalFormat("#.##");      //It seems that formatting the decimal ends up interfering with values of Infinity. 
+			//	Double finalans = Double.parseDouble(df.format(answer)); 
+				System.out.println("Iteration " + currentTerm + " = " + answer);  
 				lastPerimeter = answer; 
 				currentTerm ++; 
 			}
