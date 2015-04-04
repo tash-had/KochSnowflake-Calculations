@@ -1,113 +1,80 @@
-
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<title>
-			KochCalculator
-		</title>
-		<link rel="stylesheet" type="text/css" href="styles/styles.css">
-		<link rel="icon" type="img/png" href="images/favicon.png">
-	</head>
-	<body>	
-		<header id="mainHeader"> 
-			Koch Snowflake Calculator <br> By: Tash-had Saqif
-		</header>
-		<br><br>
-		<aside>
-			<form>
-				<input type="number" id="iterationInput" placeholder="FIRST ITERATION VALUE">
-			</form>
-			<form>
-				<input type="number" id="rangeInput" placeholder="# OF ITERATIONS">
-			</form>
-		</aside>
-		<section>
-			<div id="tableContainer">
-				<table id="mainTable">
-					<tr>
-						<td>
-							<button id="triangleButton" class="settingButton" onclick="shapeHandler('triangle');">
-								Triangle Fractal
-							</button>
-						</td>
-						<td>
-							<button  id="squareButton" onclick="shapeHandler('square');" class="settingButton">
-								Square Fractal
-							</button> 
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<button id="perimeterButton" onclick="actionHandler('perimeter');" class="settingButton">
-								Perimeter
-							</button>
-						</td>
-						<td>
-							<button id="areaButton" onclick="actionHandler('area');" class="settingButton">
-								Area
-							</button>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<button id="resetButton" onclick="location.reload();">
-								Reset
-							</button>
-						</td>
-						<td>
-							
-							<button id="calculateButton" onclick="process();">
-								Calculate
-							</button>
-						</td>
-					</tr>
-				</table>
-			</div>
-		</section>
-		<div id="aboutSection">
-			<span id="aboutTitle">About</span>
-			<br><br>
-			<span id="aboutBody">
-				The Koch Snowflake is a very intriguing math concept that has caught my interest as of recent. Essentially, it is math-curve, a fractal, which was brought to attention by Helge von Koch. The main idea behind it, is the fact that it is possible to have a shape with an <b>infinite</b> perimeter but a <b>finite</b> area. This to me, was a very interesting concept to ponder upon. 
-				<br><br>
-				 There's only so many iterations I can calculate manually, so, out of interest, I decided make something to calculate the iterations for me. Before this web-version, I made a Java version. That can be found by clicking <a href="http://www.goo.gl/sgC8yS" style="color:black; text-decoration: none;">here</a>. These projects are entirely open source and anyone is free to use it for whatever purpose. The code can be found on <a href="http://www.goo.gl/N7mXk5" style="color: black; text-decoration: none;">my Github</a>
-			</span>
+<head>
+	<title>
+		KochCalculator
+	</title>
+	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	<link rel="icon" type="img/png" href="images/favicon.png">
+</head>
+<body>	
+	<header id="mainHeader"> 
+		Koch Snowflake Calculator <br> By: Tash-had Saqif
+	</header>
+	<br><br>
+	<aside>
+		<form>
+			<input type="number" id="iterationInput" placeholder="FIRST ITERATION VALUE">
+		</form>
+		<form>
+			<input type="number" id="rangeInput" placeholder="# OF ITERATIONS">
+		</form>
+	</aside>
+	<section>
+		<div id="tableContainer">
+			<table id="mainTable">
+				<tr>
+					<td>
+						<button id="triangleButton" class="settingButton" onclick="shapeHandler('triangle');">
+							Triangle Fractal
+						</button>
+					</td>
+					<td>
+						<button  id="squareButton" onclick="shapeHandler('square');" class="settingButton">
+							Square Fractal
+						</button> 
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button id="perimeterButton" onclick="actionHandler('perimeter');" class="settingButton">
+							Perimeter
+						</button>
+					</td>
+					<td>
+						<button id="areaButton" onclick="actionHandler('area');" class="settingButton">
+							Area
+						</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button id="resetButton" onclick="location.reload();">
+							Reset
+						</button>
+					</td>
+					<td>
+						<button id="calculateButton" onclick="process();">
+							Calculate
+						</button>
+					</td>
+				</tr>
+			</table>
+			<a id="downArrow" href="#answerFrame"><img src="images/arrow4.png" height="92px" width="61px" alt="Scroll to bottom"></a>
 		</div>
-	</body>
-	<script type="text/javascript" src="js/scripts.js"></script>
+		<textarea id="answerFrame" readonly></textarea>
+		<button id="bTop" onclick="topGo();">Back To Top </button>
+	</section>
+	<div id="aboutSection">
+		<span id="aboutTitle">About</span>
+		<br><br>
+		<span id="aboutBody">
+			The Koch Snowflake is a very intriguing math concept that has caught my interest as of recent. Essentially, it is math-curve, a fractal, which was brought to attention by Helge von Koch. The main idea behind it, is the possibility of having a shape with an <b>infinite</b> perimeter but a <b>finite</b> area. This to me, was a very interesting concept to ponder upon. 
+			<br><br>
+			There's only so many iterations I can calculate manually, so, out of interest, I decided make something to calculate the iterations for me. Before this web-version, I made a Java version, which can be found by clicking <a href="http://www.goo.gl/sgC8yS" style="color:black; text-decoration: none;">here</a>. These projects are entirely open source and anyone is free to use it for whatever purpose. The code can be found on <a href="http://www.goo.gl/N7mXk5" style="color: black; text-decoration: none;">my Github</a>
+		</span>
+	</div>
+</body>
+<script type="text/javascript" src="js/scripts.js"></script>
 </html>
-
-<!--
-
-				This webpage was created by <a href="http://www.tash-had.tk" style="color: black; text-decoration: none;">Tash-had Saqif</a>. <br>
-
- -->
-
-
- <!-- 
-
-
-
-<div id="inputTable">
-				<table>
-					<tr>
-						<td>
-							<form>
-							<br>
-								<p>
-									What is the <span id="operation">value</span> of the first iteration?
-								</p>
-								<input type="number" id="initialInput"> <br>
-								<p>
-									How many iterations do you want?
-								</p>
-								<input type="number" id="initialInput"> <br>
-							</form>
-						</td>
-					</tr>
-				</table>
-			</div>
-
-
- --> 
