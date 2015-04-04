@@ -84,8 +84,6 @@ function selected(id, type){
 
 function topGo(){
 	window.location.replace("index.html#mainHeader");
-	document.getElementById("downArrow").src = "images/arrow3.png";
-
 }
 
 function process(){
