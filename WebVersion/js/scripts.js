@@ -91,6 +91,11 @@ function topGo(){
 function process(){
 	lastValue = parseInt(document.getElementById('iterationInput').value);
 	iterationAmount = parseInt(document.getElementById('rangeInput').value);
+
+	if(isNaN(lastValue) || isNaN(iterationAmount)){
+		alert(" There is a format error with your inputs. Please ensure they are both numbers. NaN = Not a Number.");
+	}
+
 	window.location.replace("index.html#answerFrame");
 
 	if(iterationAmount>249 && iterationAmount<1001){
