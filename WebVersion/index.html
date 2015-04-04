@@ -16,7 +16,10 @@
 		<br><br>
 		<aside>
 			<form>
-				<input type="number" id="iterationInput">
+				<input type="number" id="iterationInput" placeholder="FIRST ITERATION VALUE">
+			</form>
+			<form>
+				<input type="number" id="rangeInput" placeholder="# OF ITERATIONS">
 			</form>
 		</aside>
 		<section>
@@ -48,8 +51,14 @@
 					</tr>
 					<tr>
 						<td>
-							<button id="resetButton" onclick="reset();">
+							<button id="resetButton" onclick="location.reload();">
 								Reset
+							</button>
+						</td>
+						<td>
+							
+							<button id="calculateButton" onclick="process();">
+								Calculate
 							</button>
 						</td>
 					</tr>

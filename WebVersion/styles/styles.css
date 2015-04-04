@@ -53,23 +53,45 @@ body{
 	border-radius: 8px; 
 	text-align: center;
 	margin-left: 60%;
-	margin-top: 5%; 
+	margin-top: 15%; 
+	float: right; /* CHECK */
 
 }
 
 #resetButton{
-	height: 40px; 
-	width: 400px; 
+
+	height: 40px;
+	width: 200px; 
 	background-color: #1976D2; 
 	color: white; 
 	font-family: monospace; 
 	font-weight: lighter; 
-	font-size: 20px;
+	font-size: 30px;
 	border: none;
 	border-radius: 8px; 
 	text-align: center;
-	margin-top: 5%; 
-	margin-left: 60%; 
+	margin-top: 5%;
+	float: left;
+	clear: left;
+
+}
+
+#calculateButton{
+
+	clear: right;
+	float: right;
+	height: 40px;
+	width: 200px; 
+	background-color: #1976D2; 
+	color: white; 
+	font-family: monospace; 
+	font-weight: lighter; 
+	font-size: 30px;
+	border: none;
+	border-radius: 8px; 
+	text-align: center;
+	margin-top: 5%;
+
 
 }
 
@@ -79,6 +101,82 @@ body{
 
 #iterationInput{
 	float: left; 
-	margin-top: 5%;
+	margin-top: 4%;
 	margin-left: 5%;
+	margin-right: 5%;
+	height: 100px;
+	width: 300px;
+	border-radius: 8px;
+	border: none;
+	background-color: #1E88E5;
+	padding: 10px;
+	font-size: 30px;
+	text-align: center;
+	color: white;
+	font-family: monospace;
+
+
+}
+
+#rangeInput{
+	margin-left: 5%; 
+	margin-right: 5%;
+	float: left; 
+	clear: left;
+	margin-top: 4%;
+	height: 100px;
+	width: 300px;
+	border-radius: 8px;
+	border: none;
+	background-color: #1E88E5;
+	padding: 10px;
+	font-size: 20px;
+	text-align: center;
+	color: white;
+	font-family: monospace;
+
+}
+
+::-webkit-input-placeholder {
+   color: white;
+   font-family: 'Slabo 27px', serif;
+   font-size: 20px;
+   	font-weight: lighter;
+   	opacity: 0.6;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white; 
+   font-family: 'Slabo 27px', serif;
+   font-size: 20px;
+   	font-weight: lighter;
+   	opacity: 0.6;
+
+
+ 
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+   font-family: 'Slabo 27px', serif;
+   font-size: 20px;
+   	font-weight: lighter;
+   	opacity: 0.6;
+
+
+}
+
+:-ms-input-placeholder {  
+   color: white; 
+   font-family: 'Slabo 27px', serif;
+   font-size: 20px;
+   font-weight: lighter;
+   opacity: 0.6;
+
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }

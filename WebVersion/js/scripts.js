@@ -53,8 +53,6 @@ function setColor(btn,color){
 
 
 
-
-
 function selected(id, type){
 
 	var originColor = "#1976D2"; 
