@@ -3,27 +3,21 @@ var square = null;
 var triangle = null;
 var  perimeter = null;
 var area = null;
-
 var iterationAmount;
 var title;
 var lastValue;
 
-
 function shapeHandler(shape){
-
 	if(shape === ("square")){
 		square = true;
 		triangle = false;
 		document.getElementById('triangleButton').disabled=true;
 		selected("squareButton", "shapeH");
-
 	}
-
 	else if(shape === ("triangle")){
 		triangle = true;
 		square = false;
 		selected("triangleButton", "shapeH");
-
 	}
 }
 
@@ -38,8 +32,6 @@ function actionHandler(action){
 		area = true;
 		perimeter = false;
 		selected("areaButton", "actionH");
-
-
 	}
 }
 
@@ -85,13 +77,23 @@ function selected(id, type){
 function topGo(){
 	window.location.replace("index.html#mainHeader");
 	document.getElementById("downArrow").src = "images/arrow3.png";
-
 }
 
 function process(){
 	lastValue = parseInt(document.getElementById('iterationInput').value);
 	iterationAmount = parseInt(document.getElementById('rangeInput').value);
-	window.location.replace("index.html#answerFrame");
+	var travelDown = true; 
+
+	if((perimeter || area) === null || (square || triangle) === null){
+		travelDown = false;  
+		if(window.confirm("You need to select Square Fractal/Triangle Fractal and Perimeter/Area")){
+			location.reload();
+		}
+	}
+
+	if(travelDown == true){
+		window.location.replace("index.html#answerFrame");
+	}
 
 	if(iterationAmount>249 && iterationAmount<1001){
 		alert(iterationAmount + " is a pretty big amount of iterations. Give me like 10 seconds."); 
@@ -109,21 +111,25 @@ function process(){
 
 		case (perimeter && triangle):
 		title = "Perimeters for a Triangle Fractal." + "\n" + "\n" + "\n" + "Inital Perimeter = " + lastValue;
+		setTitle(title);
 		perimeterProcess("triangle");
 		break;
 
 		case (perimeter && square):
 		title = "Perimeters for a Square Fractal." + "\n" + "\n" + "\n" + "Inital Perimeter = " + lastValue;
+		setTitle(title);
 		perimeterProcess("square");
 		break;
 
 		case (area && triangle):
 		title = "Areas for a Triangle Fractal." + "\n" + "\n" + "\n" + "Inital Area = " + lastValue;
+		setTitle(title);
 		areaProcess("triangle");
 		break;
 
 		case (area && square):
 		title = "Areas for a Square Fractal." +  "\n" + "\n" + "\n" + "Inital Area = " + lastValue;
+		setTitle(title);
 		areaProcess("square");
 		break;
 	}
@@ -138,7 +144,6 @@ function perimeterProcess(gShape){
 		cRatioNum = 1.6666;
 	}
 
-	document.getElementById('answerFrame').innerHTML = title + "\n" + "\n" + "\n" + "\n" + "\n";
 	while(currentTerm<iterationAmount){
 		answer = cRatioNum*lastValue;
 		document.getElementById('answerFrame').innerHTML = document.getElementById('answerFrame').innerHTML + "Iteration " + currentTerm + " = " + answer + "\n" + "\n" + "\n"; 
@@ -149,12 +154,33 @@ function perimeterProcess(gShape){
 }
 
 function areaProcess(gShape){
-	if(gShape === "triangle"){
+	var currentTerm = 0;
+	var num = 0;
+	var deNum = 0;
+	var mFactor = 0; 
+	var baseNum = 0; 
+	var area; 
+	var areaSum = 0; 
 
+	if(gShape === "triangle"){
+		mFactor = 1/3;
+		baseNum = 4/9; 
 	}
 
 	else if(gShape === "square"){
-
+		mFactor = 1/4;
+		baseNum = 5/9; 
 	}
 
+	while(currentTerm<iterationAmount){
+		area = lastValue + mFactor*(Math.pow(baseNum,currentTerm)+ areaSum); 
+		areaSum = areaSum + Math.pow(baseNum, currentTerm);
+		var count = currentTerm + 2; 
+		document.getElementById('answerFrame').innerHTML = document.getElementById('answerFrame').innerHTML + "Iteration " + count + " = " + area + "\n" + "\n" + "\n"; 
+		currentTerm++; 
+	}
+}
+
+function setTitle(mainTitle){
+	document.getElementById('answerFrame').innerHTML = mainTitle + "\n" + "\n" + "\n" + "\n" + "\n";
 }
