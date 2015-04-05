@@ -218,9 +218,22 @@ input[type=number]::-webkit-outer-spin-button {
 	margin-left: 85%;
 	clear: both;
 	float: right;
-	margin-top: 15%;
+	margin-top: 13%;
 	margin-right: 2%;
 }
+
+#helpTitle{
+	margin-right: 88%;
+	display: inline-block;
+	clear: left;
+	font-weight: lighter;
+	font-family: 'Slabo 27px', serif; 
+	color: white; 
+	text-align: center;
+	font-size: 18px;
+	float: left;
+}
+
 
 html{
 	overflow-x: hidden;

@@ -42,8 +42,8 @@ function selected(id, type){
 
 	var stateCheck = (document.getElementById(id).style.backgroundColor);
 
-	var otherIdOne = null;
-	var otherIdTwo = null;
+	var otherIdOne = null
+;	var otherIdTwo = null;
 
 	switch(id){
 		case "squareButton":
@@ -149,7 +149,7 @@ function perimeterProcess(gShape){
 
 	while(currentTerm<iterationAmount){
 		answer = cRatioNum*lastValue;
-		document.getElementById('answerFrame').innerHTML = document.getElementById('answerFrame').innerHTML + "Iteration " + currentTerm + " = " + answer + "\n" + "\n" + "\n"; 
+		document.getElementById('answerFrame').innerHTML = document.getElementById('answerFrame').innerHTML + "Iteration " + currentTerm + " = " + answer + "\n" + "\n" + "\n" + "\n"; 
 		lastValue = answer;
 		currentTerm++;			
 	}
@@ -189,6 +189,7 @@ function setTitle(mainTitle){
 }
 
 function openHowTo(){
+	window.location.replace("#instructionTitle");
 	document.getElementById('instructionTitle').innerHTML = "Instructions"; 
 	document.getElementById('liOne').innerHTML = "1- Insert the value of your first iteration into the first input box. This can be the first area or the first perimeter value of your fractal. Whatever the case, you need the first value <br>"; 
 	document.getElementById('liTwo').innerHTML = "2- Insert the amount of iterations you'd like to calculate into the second input box. Due to browser-limitations, entering a number that&#39;s too large can and will crash this session. <br>";
