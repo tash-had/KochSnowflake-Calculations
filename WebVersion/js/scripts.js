@@ -76,13 +76,16 @@ function selected(id, type){
 
 function topGo(){
 	window.location.replace("index.html#mainHeader");
-	document.getElementById("downArrow").src = "images/arrow3.png";
 }
 
 function process(){
 	lastValue = parseInt(document.getElementById('iterationInput').value);
 	iterationAmount = parseInt(document.getElementById('rangeInput').value);
 	var travelDown = true; 
+
+	if(isNaN(lastValue || iterationAmount)){
+		alert("Please make sure you entered numbers in the input boxes.");
+	}
 
 	if((perimeter || area) === null || (square || triangle) === null){
 		travelDown = false;  
@@ -183,4 +186,11 @@ function areaProcess(gShape){
 
 function setTitle(mainTitle){
 	document.getElementById('answerFrame').innerHTML = mainTitle + "\n" + "\n" + "\n" + "\n" + "\n";
+}
+
+function openHowTo(){
+	document.getElementById('instructionTitle').innerHTML = "Instructions"; 
+	document.getElementById('liOne').innerHTML = "1- Insert the value of your first iteration into the first input box. This can be the first area or the first perimeter value of your fractal. Whatever the case, you need the first value <br>"; 
+	document.getElementById('liTwo').innerHTML = "2- Insert the amount of iterations you'd like to calculate into the second input box. Due to browser-limitations, entering a number that&#39;s too large can and will crash this session. <br>";
+	document.getElementById('liThree').innerHTML = "3- Select either &#39;Triangle Fractal&#39; or &#39;Square Fractal&#39; and &#39;Perimeter&#39; or &#39;Area&#39;"; 
 }
