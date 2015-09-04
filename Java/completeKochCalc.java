@@ -11,13 +11,11 @@ public class completeKochCalc {
 
 	private static void modeSelect() {
 
-		System.out.println("");
-		System.out.println("Welcome to Koch Calculator! Please enter a letter...");
+		System.out.println("\nWelcome to Koch Calculator! Please enter a letter...");
 		System.out.println("A - Triangle Fractal Area");
 		System.out.println("a - Triangle Fractal Perimeter");
 		System.out.println("B - Square Fractal Area");
-		System.out.println("b - Square Fractal Perimeter");
-		System.out.println("");
+		System.out.println("b - Square Fractal Perimeter\n");
 		String choice = input.next(); 
 		String calcOpt1 = "triangle"; 
 		String calcOpt2 = "square"; 
@@ -68,9 +66,7 @@ public class completeKochCalc {
 			input.next();
 			perimeter(fractalName);
 		}
-		System.out.println("");
-		System.out.println("Perimeters for Koch's " + fractalName + " Fractal with initial perimeter of " + lastPerimeter + " units");
-		System.out.println("");
+		System.out.println("\nPerimeters for Koch's " + fractalName + " Fractal with initial perimeter of " + lastPerimeter + " units\n");
 
 		while(currentTerm<terms){
 			double answer = cRatioNum*lastPerimeter;
@@ -78,8 +74,7 @@ public class completeKochCalc {
 			lastPerimeter = answer;
 			currentTerm++;
 		}
-		System.out.println("");
-		System.out.println("Enter any letter to return to menu.");
+		System.out.println("\nEnter any letter to return to menu.");
 		input.next();
 		modeSelect();
 	}
@@ -108,9 +103,7 @@ public class completeKochCalc {
 			deNum = 4;
 		}
 
-		System.out.println("");
-		System.out.println("Area's for Koch's " + fractalName + " Fractal with initial area of " + lastArea);
-		System.out.println("");
+		System.out.println("\nArea's for Koch's " + fractalName + " Fractal with initial area of " + lastArea + "\n");
 		System.out.println("Iteration 1 = " + lastArea);
 
 		while(currentTerm<terms){
@@ -121,8 +114,7 @@ public class completeKochCalc {
 			currentTerm++;
 		}
 
-		System.out.println("");
-		System.out.println("Enter any letter to return to menu.");
+		System.out.println("\nEnter any letter to return to menu.");
 		input.next();
 		modeSelect();
 	}
